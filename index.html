@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warehouse Strategy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Warehouse Strategy</h1>
+    <p class="subtitle">Run your warehouse like a strategy game: pickers auto-fulfill orders, you manage the economy.</p>
+  </header>
+
+  <main>
+    <section class="hud-panel">
+      <div class="hud-grid">
+        <div class="hud-stat"><span class="label">Score</span><span class="value" id="stat-score">0</span></div>
+        <div class="hud-stat"><span class="label">Level</span><span class="value" id="stat-level">1</span></div>
+        <div class="hud-stat"><span class="label">Efficiency</span><span class="value" id="stat-efficiency">100%</span></div>
+        <div class="hud-stat"><span class="label">Throughput</span><span class="value" id="stat-throughput">0/min</span></div>
+        <div class="hud-stat"><span class="label">Workers</span><span class="value" id="stat-workers">0/0</span></div>
+        <div class="hud-stat"><span class="label">Completed</span><span class="value" id="stat-completed">0</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-pause">Pause</button>
+        <button id="btn-hire">Hire Worker <span class="cost" id="cost-hire"></span></button>
+        <button id="btn-speed">Upgrade Speed <span class="cost" id="cost-speed"></span></button>
+        <button id="btn-restart">Restart</button>
+      </div>
+
+      <div id="order-queue">
+        <h3>Order Queue</h3>
+        <ul id="order-list"></ul>
+      </div>
+    </section>
+
+    <section class="map-panel">
+      <div id="canvas-wrap">
+        <canvas id="game-canvas"></canvas>
+        <div id="level-up-banner" hidden>Level Up!</div>
+      </div>
+      <p class="legend">
+        <span class="swatch dockIn"></span> Receiving &nbsp;
+        <span class="swatch dockOut"></span> Shipping &nbsp;
+        <span class="swatch shelf"></span> Shelf &nbsp;
+        <span class="swatch worker"></span> Picker &nbsp;
+        <span class="swatch workerCarrying"></span> Carrying
+      </p>
+    </section>
+  </main>
+
+  <script src="js/rng.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/economy.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
